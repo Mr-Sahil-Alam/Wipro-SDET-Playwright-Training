@@ -124,3 +124,16 @@ let bc = 10;
 [ac, bc] = [bc, ac];
 
 console.log(ac, bc);
+
+//Type check
+
+function checkType(input) {
+  if (typeof input === "number") {
+    console.log("This is a number");
+  } else if (typeof input === "string") {
+    console.log("This is a string");
+  }
+}
+
+checkType(10);
+checkType("hello");
