@@ -153,3 +153,13 @@ let messy = " Javascript is fun ";
 let clean = messy.trim().toLowerCase();
 
 console.log(clean);
+
+//The Grocery List
+
+let cart = ["Rice", "Bread", "Butter"];
+
+cart.push("Milk");     // add at end
+cart.unshift("Eggs");  // add at beginning
+cart.pop();            // remove last item
+
+console.log(cart);
