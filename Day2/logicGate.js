@@ -10,7 +10,7 @@ Return the final array.
 */
 
 let getHighNumbers = (arr) => {
-  let threshold = Math.floor(Math.random() * 50) + 1;
+  let threshold = Math.floor(Math.random() * 50) + 1; //Generate random threshold
 
   return arr
     .filter(x => typeof x === "number")
