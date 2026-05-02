@@ -1,81 +1,38 @@
-// =======================
-// STRINGS
-// =======================
-
-// Template literal (modern string)
+// ===== STRINGS =====
 let name = "Sahil";
-console.log(`Hello ${name}`);
+console.log(`Hello ${name}`); // template literal
 
-// =======================
-// FUNCTIONS
-// =======================
+// ===== FUNCTIONS =====
+function sum(a, b) { return a + b; }
+let add = (a, b) => a + b; // arrow function
 
-// Normal function
-function sum(a, b) {
-  return a + b;
-}
-
-// Arrow function
-let add = (a, b) => a + b;
-
-// =======================
-// LOOPS
-// =======================
-
+// ===== ARRAY LOOP =====
 let arr = [1, 2, 3];
+arr.forEach(x => console.log(x)); // loop
 
-// forEach loop
-arr.forEach(x => console.log(x));
+// ===== ARRAY METHODS =====
+arr.filter(x => x > 1);      // filter
+arr.map(x => x * 2);         // map
+arr.reduce((a, b) => a + b); // sum
 
-// =======================
-// ARRAY METHODS
-// =======================
+// ===== TYPE CHECK =====
+typeof 5;        // number
+typeof "hi";     // string
 
-// filter → select elements
-arr.filter(x => x > 1);
-
-// map → modify elements
-arr.map(x => x * 2);
-
-// reduce → combine values
-arr.reduce((acc, x) => acc + x, 0);
-
-// =======================
-// TYPE CHECK
-// =======================
-
-typeof 5;        // "number"
-typeof "hi";     // "string"
-
-// =======================
-// TYPE CONVERSION
-// =======================
-
+// ===== TYPE CONVERSION =====
 Number("5");     // 5
 String(5);       // "5"
 
-// =======================
-// ARRAY OPERATIONS
-// =======================
-
+// ===== ARRAY OPERATIONS =====
 let colors = ["red", "blue"];
-
-colors.push("green");    // add end
+colors.push("green");    // end
 colors.pop();            // remove end
-colors.unshift("black"); // add start
+colors.unshift("black"); // start
 colors.shift();          // remove start
 
-// =======================
-// SEARCH
-// =======================
-
+// ===== SEARCH =====
 colors.includes("red"); // true
 colors.indexOf("blue"); // index
 
-// =======================
-// RANDOM NUMBER
-// =======================
-
+// ===== RANDOM =====
 Math.floor(Math.random() * 100) + 1;
-
-// =======================
