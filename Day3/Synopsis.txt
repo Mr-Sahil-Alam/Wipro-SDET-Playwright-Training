@@ -1,0 +1,5 @@
+// forEach → loop
+// map → transform array
+// filter → select elements
+// reduce → single value (sum, count, avg)
+// concat → merge arrays
