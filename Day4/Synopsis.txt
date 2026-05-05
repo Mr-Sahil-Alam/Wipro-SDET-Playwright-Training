@@ -63,3 +63,7 @@ fetchData().then(data => console.log(data));
 // catch → handle error
 // setTimeout → delay once
 // setInterval → repeat again & again
+// fetch → API call
+// res.json() → convert response
+// filter → select data
+// map → modify data
