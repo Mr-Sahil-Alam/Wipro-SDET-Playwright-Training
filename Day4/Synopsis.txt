@@ -54,3 +54,12 @@ function fetchData() {
 }
 
 fetchData().then(data => console.log(data));
+
+
+// Promise → async result
+// resolve → success
+// reject → error
+// then → handle success
+// catch → handle error
+// setTimeout → delay once
+// setInterval → repeat again & again
