@@ -6,3 +6,14 @@ fetch("https://open.er-api.com/v6/latest/USD")
     console.log("USD to GBP:", data.rates.GBP);
   })
   .catch(err => console.error(err));
+
+//Print value Greater than 90
+fetch("https://open.er-api.com/v6/latest/USD")
+  .then(res => res.json())
+  .then(data => {
+    let result = Object.entries(data.rates)
+      .filter(([currency, value]) => value > 90);
+
+    console.log(result);
+  })
+  .catch(err => console.error(err));
