@@ -1,69 +1,170 @@
 // =======================
-// setTimeout → runs once after delay
+// ASYNC BASICS
 // =======================
-setTimeout(() => {
-  console.log("Runs after 2 sec");
-}, 2000);
+
+setTimeout(() => console.log("Runs after 2 sec"), 2000);
+
+let id = setInterval(() => console.log("Runs every 1 sec"), 1000);
+setTimeout(() => clearInterval(id), 3000);
+
 
 // =======================
-// setInterval → runs repeatedly
+// CALLBACK
 // =======================
-let id = setInterval(() => {
-  console.log("Runs every 1 sec");
-}, 1000);
 
-// stop interval
-clearInterval(id);
-
-// =======================
-// CALLBACK FUNCTION
-// =======================
-function getData(callback) {
+function getData(cb) {
   setTimeout(() => {
     console.log("Data fetched");
-    callback();
+    cb();
   }, 1000);
 }
 
 getData(() => console.log("Next step"));
 
+
 // =======================
 // PROMISE
 // =======================
-let myPromise = new Promise((resolve, reject) => {
-  let success = true;
 
-  if (success) resolve("Success");
-  else reject("Error");
+let p = new Promise((res, rej) => {
+  let ok = true;
+  ok ? res("Success") : rej("Error");
 });
 
-// =======================
-// .then / .catch
-// =======================
-myPromise
-  .then(res => console.log(res))
-  .catch(err => console.log(err));
-
-// =======================
-// FETCH DATA (simulate)
-// =======================
-function fetchData() {
-  return new Promise(resolve => {
-    setTimeout(() => resolve("Data received"), 2000);
-  });
-}
-
-fetchData().then(data => console.log(data));
+p.then(console.log).catch(console.error);
 
 
-// Promise → async result
-// resolve → success
-// reject → error
-// then → handle success
-// catch → handle error
-// setTimeout → delay once
-// setInterval → repeat again & again
-// fetch → API call
-// res.json() → convert response
-// filter → select data
-// map → modify data
+// =======================
+// FETCH + PROMISE FLOW
+// =======================
+
+fetch(url)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(console.error);
+
+
+// =======================
+// EVENT LOOP
+// =======================
+// Sync → Promise → setTimeout
+
+
+// =======================
+// ARROW FUNCTION
+// =======================
+
+x => x * 2
+
+
+// =======================
+// ARRAY METHODS
+// =======================
+
+arr.filter(x => x.id <= 10)
+arr.map(x => x.title)
+arr.reduce((acc, x) => acc + x, 0)
+
+
+// =======================
+// OBJECT → ARRAY
+// =======================
+
+Object.entries(obj)
+
+
+// =======================
+// DESTRUCTURING
+// =======================
+
+([key, value])
+
+
+// =======================
+// COMMON API PATTERN
+// =======================
+
+fetch(url)
+  .then(r => r.json())
+  .then(data => data.filter(...))
+  .then(data => data.map(...))
+  .then(console.log)
+  .catch(console.error);
+
+
+// =======================
+// API DATA TYPES
+// =======================
+
+// 1. Direct array → data
+// 2. Nested → obj.data
+// 3. Nested → obj.results
+
+
+// =======================
+// 10 API PRACTICE SUMMARY
+// =======================
+
+// 1. TODOS
+// data → filter id → map title
+
+// 2. POSTS
+// data → filter userId → map title
+
+// 3. COMMENTS
+// data → filter id → map email
+
+// 4. USERS
+// data → filter id → map name
+
+// 5. ALBUMS
+// data → filter id → map title
+
+// 6. PHOTOS
+// data → filter id → map url
+
+// 7. CAT FACTS
+// obj.data → filter length → map fact
+
+// 8. DOG FACTS
+// obj.data → map attributes.body
+
+// 9. RANDOM USER
+// obj.results → filter gender → map name.first
+
+// 10. POKEMON
+// obj.results → filter name → map name
+
+
+// =======================
+// SPECIAL LOGIC
+// =======================
+
+Object.entries(data.rates)
+  .filter(([k, v]) => v > 90)
+
+
+// =======================
+// ERROR HANDLING
+// =======================
+
+.catch(err => console.error(err))
+
+
+// =======================
+// MEMORY SHORTCUT
+// =======================
+
+/*
+fetch → json → filter → map → output
+
+array → filter/map
+object → Object.entries()
+
+data / data.data / data.results
+
+then → success
+catch → error
+
+Sync → Promise → setTimeout
+*/
