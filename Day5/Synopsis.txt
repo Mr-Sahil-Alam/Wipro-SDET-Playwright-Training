@@ -1,0 +1,186 @@
+// =======================
+// OOPS (Object Oriented Programming)
+// =======================
+
+// OOPS → organize code using objects and classes
+
+
+// =======================
+// CLASS
+// =======================
+// blueprint/template
+
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  intro() {
+    console.log(`My name is ${this.name}`);
+  }
+}
+
+
+// =======================
+// OBJECT
+// =======================
+// real instance of class
+
+let s1 = new Student("Sahil", 22);
+
+s1.intro();
+
+
+// =======================
+// CONSTRUCTOR
+// =======================
+// special function
+// runs automatically when object created
+
+constructor(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+
+// =======================
+// THIS KEYWORD
+// =======================
+// refers to current object
+
+this.name = name;
+
+
+// =======================
+// METHOD
+// =======================
+// function inside class
+
+intro() {
+  console.log(this.name);
+}
+
+
+// =======================
+// INHERITANCE
+// =======================
+// child class gets parent properties/methods
+
+class Animal {
+  sound() {
+    console.log("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Dog barks");
+  }
+}
+
+let d1 = new Dog();
+
+d1.sound();
+d1.bark();
+
+
+// =======================
+// SUPER KEYWORD
+// =======================
+// calls parent constructor
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Employee extends Person {
+  constructor(name, role) {
+    super(name);
+
+    this.role = role;
+  }
+}
+
+let e1 = new Employee("Sahil", "Tester");
+
+console.log(e1.name);
+console.log(e1.role);
+
+
+// =======================
+// POLYMORPHISM
+// =======================
+// same method, different behavior
+
+class Bird {
+  sound() {
+    console.log("Bird sound");
+  }
+}
+
+class Crow extends Bird {
+  sound() {
+    console.log("Crow says caw");
+  }
+}
+
+let c1 = new Crow();
+
+c1.sound();
+
+
+// =======================
+// ENCAPSULATION
+// =======================
+// hiding internal details/data
+
+class Bank {
+  #balance = 1000;
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+let b1 = new Bank();
+
+console.log(b1.getBalance());
+
+
+// =======================
+// ABSTRACTION
+// =======================
+// show important details only
+// hide implementation
+
+
+// =======================
+// IMPORTANT KEYWORDS
+// =======================
+
+/*
+class       → blueprint
+object      → real instance
+constructor → auto setup
+this        → current object
+extends     → inheritance
+super       → parent constructor
+method      → function inside class
+*/
+
+
+// =======================
+// MEMORY SHORTCUT
+// =======================
+
+/*
+Class → blueprint
+Object → real thing
+Constructor → auto setup
+this → current object
+extends → inheritance
+super → parent constructor
+*/
