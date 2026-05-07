@@ -1,0 +1,179 @@
+// =======================
+// ADVANCED LOGIC QUESTIONS SYNOPSIS
+// =======================
+
+
+// =======================
+// STRING PARSING
+// =======================
+// split() → convert string into array
+
+"London-Paris:150".split(":")
+// ["London-Paris", "150"]
+
+"Movie|Sci-Fi|12000".split("|")
+// ["Movie", "Sci-Fi", "12000"]
+
+
+// =======================
+// OBJECT CREATION
+// =======================
+
+return {
+  from,
+  to,
+  price
+};
+
+
+// =======================
+// NUMBER CONVERSION
+// =======================
+
+price = Number(price);
+
+
+// =======================
+// INVALID NUMBER CHECK
+// =======================
+
+if (isNaN(price)) {
+  price = 0;
+}
+
+
+// =======================
+// FILTER
+// =======================
+// select matching data
+
+arr.filter(x => x.price >= 100)
+
+
+// =======================
+// MULTIPLE CONDITIONS
+// =======================
+
+.filter(
+  x =>
+    (x.genre === "Action" || x.genre === "Sci-Fi") &&
+    x.views > 5000
+)
+
+
+// =======================
+// MAP
+// =======================
+// transform data
+
+arr.map(x => x.title)
+
+
+// =======================
+// SORT
+// =======================
+
+// ascending order
+arr.sort((a, b) => a.price - b.price)
+
+// descending order
+arr.sort((a, b) => b.views - a.views)
+
+
+// =======================
+// JSON STRING
+// =======================
+
+JSON.stringify(arr)
+
+
+// =======================
+// CALLBACK FUNCTION
+// =======================
+
+function applyPromo(cart, callback) {
+  return callback();
+}
+
+
+// =======================
+// TEMPLATE LITERALS
+// =======================
+
+`Total Saving: $${amount}`
+
+
+// =======================
+// SPREAD OPERATOR
+// =======================
+
+return {
+  ...item,
+  isDiscounted: true
+};
+
+
+// =======================
+// setTimeout
+// =======================
+
+setTimeout(() => {
+  console.log("Done");
+}, 1000);
+
+
+// =======================
+// TERNARY OPERATOR
+// =======================
+
+status: netSalary > 4000
+  ? "Premium"
+  : "Standard"
+
+
+// =======================
+// IMPORTANT BUSINESS LOGIC
+// =======================
+
+// tax calculation
+salary > 5000 ? 20% : 10%
+
+// discount logic
+category === "Electronics" &&
+price > 200
+
+
+// =======================
+// COMMON FLOW
+// =======================
+
+/*
+raw data
+→ split
+→ object creation
+→ Number conversion
+→ validation
+→ filter
+→ map
+→ sort
+→ output
+*/
+
+
+// =======================
+// MEMORY SHORTCUT
+// =======================
+
+/*
+split()         → parsing
+Number()        → conversion
+isNaN()         → invalid number check
+map()           → modify
+filter()        → select
+find()          → first match
+reduce()        → single value
+sort()          → ordering
+JSON.stringify  → JSON output
+setTimeout()    → delay
+callback        → function inside function
+*/
